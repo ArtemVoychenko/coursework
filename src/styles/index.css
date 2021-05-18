@@ -1,0 +1,28 @@
+body{
+    background-color: darkgray;
+}
+nav{
+    display: flex;
+    /*justify-content: space-between;*/
+}
+#root{
+    background-color: darkgray;
+}
+.headerNav{
+    background-color: #282c34;
+    padding: 20px;
+}
+.mainPage{
+    display: flex;
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+.page{
+    width: 500px;
+    height: 750px;
+}
+.pageText{
+    width: 400px;
+    text-align: inherit;
+    margin-left: 15%;
+}

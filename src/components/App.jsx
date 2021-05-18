@@ -1,70 +1,38 @@
 import React from 'react';
-import Filters from './Filters/Filters';
-import MoviesList from './Movies/MovieList';
+import HeaderNav from "./HeaderNav/headerNav";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Home from "./Home/home";
+import DetailPage from "./DetailsPage/detailPage";
 
 export default class App extends React.Component {
-    constructor(){
-        super()
-
-        this.state = {
-            filters: {
-                sort_by: "popularity.desc",
-                primary_release_year: "2018",
-                with_genres: []
-            },
-            page: 1,
-            total_pages: ""
-        };
-    }
-
-
-    onChangeFilters = (e) => {
-        const value = e.target.value;
-        const name = e.target.name;
-        this.setState(prevState => ({
-            filters: {
-                ...prevState.filters,
-                [name]: value
-            }
-        }));
-    };
-
-    onChangePagination = ({ page, total_pages = this.state.total_pages }) => {
-        this.setState({
-            page,
-            total_pages
-        });
-    };
-
 
     render() {
-        const { filters, page, total_pages } = this.state;
         return (
-            <div className="container">
-                <div className="row mt-4">
-                    <div className="col-4">
-                        <div className="card" style={{ width: "100%" }}>
-                            <div className="card-body">
-                                <h3>Фильтры:</h3>
-                                <Filters
-                                    page={page}
-                                    total_pages={total_pages}
-                                    filters={filters}
-                                    onChangeFilters={this.onChangeFilters}
-                                    onChangePagination={this.onChangePagination}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-8">
-                        <MoviesList
-                            filters={filters}
-                            page={page}
-                            onChangePagination={this.onChangePagination}
-                        />
-                    </div>
-                </div>
-            </div>
+            <BrowserRouter>
+                        <HeaderNav/>
+                <Switch>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/movie/:id" component={DetailPage}/>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch>
+            </BrowserRouter>
         );
     }
 }
+
+function About() {
+    return <div>
+        {/*<h2 >Здесь могла быть ваша реклама</h2>*/}
+        <img className="card-img-top card-img--height"
+    src={`http://risovach.ru/upload/2016/04/mem/zheleznyy-chelovek_111087770_orig_.jpg`}
+    alt=""
+        />
+        </div>
+}
+
+
+

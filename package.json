@@ -8,14 +8,15 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.0.0",
     "classnames": "^2.3.1",
+    "lodash": "latest",
+    "node": "latest",
     "prop-types": "latest",
+    "query-string": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2",
-    "node": "latest",
-    "lodash": "latest",
-    "query-string": "latest"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
