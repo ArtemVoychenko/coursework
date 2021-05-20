@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {
-    Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import '../../styles/index.css'
 
 
@@ -13,15 +11,11 @@ class HeaderNav extends Component {
                 <div className="row">
                     <div className="col-12">
             <nav>
-                {/*<ul>*/}
-                    {/*<li>*/}
                         <Link style={{textDecoration: "none"}} to="/">Home</Link>
                 <br/>
-                    {/*</li>*/}
-                    {/*<li>*/}
-                        <Link style={{textDecoration: "none",marginLeft:"5px"}} to="/about">About</Link>
-                    {/*</li>*/}
-                {/*</ul>*/}
+                        <Link style={{textDecoration: "none",marginLeft:"10px"}} to="/favorites">Favorite</Link>
+                <br/>
+                        <Link style={{textDecoration: "none",marginLeft:"10px"}} to="/about">About</Link>
             </nav>
                     </div>
                 </div>

@@ -3,8 +3,10 @@ import MovieItem from "./MovieItem";
 import {API_URL, API_KEY_3} from "../../api/api";
 import _ from "lodash";
 import queryString from "query-string";
+import { connect } from 'react-redux';
+import {addMoviesDispatcher, deleteMoviesDispatcher} from "../../store/dispachers/dispachers";
 
-export default class MovieList extends React.Component {
+class MovieList extends React.Component {
     constructor() {
         super();
 
@@ -48,6 +50,7 @@ export default class MovieList extends React.Component {
 
 
     componentDidMount() {
+        console.log("componentDidMount");
         this.getMovies(this.props.filters, this.props.page);
     }
 
@@ -66,17 +69,27 @@ export default class MovieList extends React.Component {
         }
     }
 
+addFavoriteMovie = (movie) => {
+
+    addMoviesDispatcher(movie)
+}
+
+removeFavoriteMovie = (id) => {
+        deleteMoviesDispatcher(id)
+    }
 
 
     render() {
         const { movies } = this.state;
+        console.log(this.props);
 
         return(
             <div className="row">
                 {movies.map(movie => {
+                    const isFavorite = this.props.favoriteMovies.some(({id})=> id === movie.id);
                     return(
                         <div key={movie.id} className="col-6 mb-4">
-                            <MovieItem item={movie}/>
+                            <MovieItem item={movie} addFavoriteMovie={this.addFavoriteMovie} isFavorite={isFavorite} removeFavoriteMovie={this.removeFavoriteMovie}/>
                         </div>
                     );
                 } )}
@@ -84,3 +97,10 @@ export default class MovieList extends React.Component {
         );
     }
 }
+
+const mapStateToProps = function(state) {
+    console.log(state);
+    return state
+}
+
+export default connect(mapStateToProps)(MovieList);

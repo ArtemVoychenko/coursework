@@ -34,6 +34,7 @@ export default class PrimaryReleaseYear extends React.Component {
             <div className="form-group">
                 <label htmlFor="primary_release_year">Год релиза:</label>
                 <select
+                    style={{cursor: "pointer"}}
                     id="primary_release_year"
                     className="form-control"
                     name="primary_release_year"

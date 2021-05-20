@@ -3,16 +3,24 @@ import HeaderNav from "./HeaderNav/headerNav";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from "./Home/home";
 import DetailPage from "./DetailsPage/detailPage";
+import {store} from "../store/store";
+import { Provider } from 'react-redux';
+import Favorites from "./Favorites/favorites";
+
 
 export default class App extends React.Component {
 
     render() {
         return (
+            <Provider store={store}>
             <BrowserRouter>
                         <HeaderNav/>
                 <Switch>
                     <Route path="/about">
                         <About />
+                    </Route>
+                    <Route path="/favorites">
+                        <Favorites/>
                     </Route>
                     <Route path="/movie/:id" component={DetailPage}/>
                     <Route path="/">
@@ -20,6 +28,7 @@ export default class App extends React.Component {
                     </Route>
                 </Switch>
             </BrowserRouter>
+            </Provider>
         );
     }
 }
@@ -33,6 +42,7 @@ function About() {
         />
         </div>
 }
+
 
 
 

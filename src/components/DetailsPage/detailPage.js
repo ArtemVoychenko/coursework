@@ -42,19 +42,23 @@ class DetailPage extends Component {
 
 
         return (
-            <div className="container mainPage">
+            <div className="container mainPage" style={{backgroundImage:`url("https://image.tmdb.org/t/p/w500${movie.backdrop_path}")`}}>
+                <div className="opacityPage">
                 <div className="page" style={{backgroundImage:`url("https://image.tmdb.org/t/p/w500${movie.poster_path}")`}}>
                 </div>
                     <div className="pageText">
-                        <h1 style={{color:"blue"}}>{movie.title}</h1>
+                        <h1 style={{color:"blue", textAlign:"center"}}>{movie.title}</h1>
                         <hr/>
-                        <h5 style={{color:"black"}}>Обзор:</h5>
-                        <h6 style={{color:"black"}}>{movie.overview}</h6>
+                        <h3 style={{color:"blue"}}>Обзор:</h3>
+                        <h6 style={{color:"white"}}>{movie.overview}</h6>
                         <hr/>
-                        <h5 style={{color:"black"}}>Дата релиза:{movie.release_date}</h5>
+                        <h3 style={{color:"blue"}}>Дата релиза:</h3>
+                        <h7 style={{color:"white"}}>{movie.release_date}</h7>
                         <hr/>
-                        <h5 style={{color:"black"}}>Рейтинг: {movie.vote_average}</h5>
+                        <h3 style={{color:"blue"}}>Рейтинг:</h3>
+                        <h7 style={{color:"white"}}>{movie.vote_average}</h7>
                     </div>
+                </div>
             </div>
 
         );

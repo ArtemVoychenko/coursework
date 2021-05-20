@@ -48,7 +48,7 @@ class Genres extends Component {
         const { with_genres } = this.props;
         return (
             <React.Fragment>
-                <div>
+                <div style={{marginTop:"10px"}}>
                     <button
                         type="button"
                         className="btn btn-outline-dark mb-2"
@@ -60,6 +60,7 @@ class Genres extends Component {
                 {genresList.map(genre => (
                     <div key={genre.id} className="form-check">
                         <input
+                            style={{cursor: "pointer"}}
                             className="form-check-input"
                             type="checkbox"
                             value={genre.id}

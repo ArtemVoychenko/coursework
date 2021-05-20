@@ -16,6 +16,18 @@ nav{
     display: flex;
     margin-top: 15px;
     padding-bottom: 15px;
+    background-attachment: fixed ;
+    background-position: top center;
+    background-size: 100%;
+}
+.opacityPage{
+    width: 1250px;
+    /*margin: 0 auto;*/
+    background: rgba(0,0,0, 0.8);
+    display: flex;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-bottom: -15px;
 }
 .page{
     width: 500px;
