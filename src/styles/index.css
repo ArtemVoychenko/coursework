@@ -1,16 +1,22 @@
-body{
-    background-color: darkgray;
-}
 nav{
     display: flex;
-    /*justify-content: space-between;*/
 }
 #root{
     background-color: darkgray;
+    background-image:url(../img/1616561185_56-p-nochnoe-nebo-fon-65-min.jpg);
+    background-attachment: fixed ;
+    background-position: top center;
+    background-size: 100%;
 }
 .headerNav{
     background-color: #282c34;
     padding: 20px;
+    background: rgba(0,0,0, 0.8);
+}
+.card.cardNew{
+    background-color: #282c34;
+    background: rgba(0,0,0, 0.8);
+    color: blue;
 }
 .mainPage{
     display: flex;
@@ -37,4 +43,7 @@ nav{
     width: 400px;
     text-align: inherit;
     margin-left: 15%;
+}
+.sidebar-filter{
+
 }

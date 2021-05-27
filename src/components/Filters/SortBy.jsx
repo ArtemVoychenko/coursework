@@ -12,7 +12,7 @@ export default class SortBy extends React.Component {
         return(
             <div className="form-group">
                 <label htmlFor="sort_by">Сортировать по:</label>
-                <select style={{cursor: "pointer"}} id="sort_by" className="form-control" name="sort_by" value={sort_by} onChange={onChangeFilters}>
+                <select style={{cursor: "pointer"}} id="sort_by" className="form-control btn-outline-dark" name="sort_by" value={sort_by} onChange={onChangeFilters}>
                     <option value="popularity.desc">Популярные по убыванию:</option>
                     <option value="popularity.asc">Популярные по возростанию:</option>
                     <option value="vote_average.desc">Рейтинг по убыванию:</option>

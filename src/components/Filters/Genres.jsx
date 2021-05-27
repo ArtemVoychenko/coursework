@@ -58,7 +58,7 @@ class Genres extends Component {
                     </button>
                 </div>
                 {genresList.map(genre => (
-                    <div key={genre.id} className="form-check">
+                    <div key={genre.id} className="form-check ">
                         <input
                             style={{cursor: "pointer"}}
                             className="form-check-input"

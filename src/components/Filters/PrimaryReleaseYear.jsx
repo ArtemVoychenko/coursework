@@ -31,12 +31,12 @@ export default class PrimaryReleaseYear extends React.Component {
     render() {
         const { primary_release_year, onChangeFilters, options } = this.props;
         return (
-            <div className="form-group">
+            <div className="form-group ">
                 <label htmlFor="primary_release_year">Год релиза:</label>
                 <select
                     style={{cursor: "pointer"}}
                     id="primary_release_year"
-                    className="form-control"
+                    className="form-control btn-outline-dark"
                     name="primary_release_year"
                     value={primary_release_year}
                     onChange={onChangeFilters}

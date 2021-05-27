@@ -19,7 +19,7 @@ export default class Pagination extends Component {
     render() {
         const { page, total_pages } = this.props;
         return (
-            <nav className="d-flex align-items-center">
+            <nav className="d-flex align-items-center" style={{margin:"40px"}}>
                 <ul className="pagination mb-0 mr-3">
                     <li
                         className={classNames("page-item", {

@@ -11,7 +11,7 @@ export default class MovieItem extends React.Component{
 
         return(
             <div>
-                <div className="card" style={{width: "100%"}}>
+                <div className="card cardNew" style={{width: "100%"}}>
                     <Link to={`movie/${item.id}`} style={{textDecoration: "none", color:"blue"}}>
                         <img className="card-img-top card-img--height"
                             src={`https://image.tmdb.org/t/p/w500${item.backdrop_path || item.poster_path}`}
@@ -23,9 +23,9 @@ export default class MovieItem extends React.Component{
                         <h6 className="card-title">{item.title}</h6>
                         <div className="card-text">Рейтинг: {item.vote_average}</div>
                     </div>
-                    {isFavorite ? (<p style={{marginLeft: "90%", color:"black", cursor: "pointer"}} onClick={onFavoriteClick}>
+                    {isFavorite ? (<p style={{marginLeft: "90%", color:"blue", cursor: "pointer"}} onClick={onFavoriteClick}>
                         &#9733;
-                    </p>) : (<p style={{marginLeft: "90%", color:"black", cursor: "pointer"}} onClick={onFavoriteClick}>
+                    </p>) : (<p style={{marginLeft: "90%", color:"blue", cursor: "pointer"}} onClick={onFavoriteClick}>
                         &#9734;
                     </p>)}
                 </div>
